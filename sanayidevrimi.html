@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pamuk Köyünden Fabrikaya</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#ffffff;--ink:#1c2836;--muted:#566476;--line:#d5dbe4;--accent:#9a5b0c;--accent-bg:#fbefd9;--old:#e9ecf1;--new:#e3f0ea;--newink:#1d5a43;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121821;--surface:#1b2431;--ink:#e8edf4;--muted:#a3afbf;--line:#2f3b4b;--accent:#f0b35c;--accent-bg:#3a2b12;--old:#243040;--new:#173a2d;--newink:#9fdcc1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121821;--surface:#1b2431;--ink:#e8edf4;--muted:#a3afbf;--line:#2f3b4b;--accent:#f0b35c;--accent-bg:#3a2b12;--old:#243040;--new:#173a2d;--newink:#9fdcc1;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1{font:700 1.7rem/1.2 Georgia,"Times New Roman",serif;margin:8px 0 6px}
+h2{font:700 1.2rem/1.3 Georgia,serif;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 16px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+nav button{flex:1;padding:10px 4px;font:600 .95rem system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+section[hidden]{display:none}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.change h3{margin:0 0 8px;font-size:1rem}
+.row{padding:8px 10px;border-radius:8px;margin:6px 0;font-size:.97rem}
+.row b{display:block;font-size:.85rem;color:var(--muted)}
+.old{background:var(--old)}.new{background:var(--new)}.new b{color:var(--newink)}
+blockquote{margin:10px 0;padding:6px 0 6px 14px;border-left:4px solid var(--accent)}
+blockquote cite{display:block;color:var(--muted);font-size:.88rem;font-style:normal}
+.vote{background:var(--accent-bg);border-radius:12px;padding:14px 16px;margin:18px 0}
+.vote p{margin:4px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;padding:0;list-style:none}
+.chips li{background:var(--accent-bg);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.9rem}
+.task{border-left:4px solid var(--accent)}
+.time{color:var(--accent);font-weight:700}
+ul.plain{padding-left:20px;margin:8px 0}
+.sentence{font:italic 1.05rem/1.6 Georgia,serif;background:var(--surface);border:1px dashed var(--accent);border-radius:12px;padding:14px 16px}
+</style>
+</head>
+<body>
+<main>
+<h1>Pamuk Köyünden Fabrikaya</h1>
+<p class="lead">Sanayi Devrimi ve modern çalışma dünyası. Etkinlik 50 dakika sürer: önce sessizce okuyacak, sonra grubunuzla çalışacaksınız.</p>
+
+<nav role="tablist" aria-label="Bölümler">
+<button role="tab" aria-selected="true" data-t="olay">Hikâye</button>
+<button role="tab" aria-selected="false" data-t="gorev">Görevler</button>
+<button role="tab" aria-selected="false" data-t="kapanis">Kapanış</button>
+</nav>
+
+<section id="olay">
+<h2>Hikâye</h2>
+<p>Bu hikâye kurgusaldır ve Sanayi Devrimi’nin genel özelliklerini yansıtır. Pamuk ovasındaki Kızılköy’de aileler yıllardır pamuğu eğirip evlerindeki tezgâhlarda dokur. Hatice ve kardeşi Mehmet de böyle yaşar. Bir gün yakındaki kasabada büyük bir iplik ve dokuma fabrikası açılır. Fabrika, çalışmak isteyen köylülere haftalık ücret önerir. Mehmet işe başlamaya karar verir, Hatice ise kararsızdır.</p>
+
+<div class="box change"><h3>D1 · Zaman</h3>
+<div class="row old"><b>Eskiden</b>Gün, güneşe ve mevsime göre akardı. İş yoğun olunca uzun, azken kısa çalışılırdı.</div>
+<div class="row new"><b>Şimdi</b>Sabah düdüğü çalıyor, giriş ve çıkış saatleri belli. Geç kalanın ücretinden kesinti yapılıyor.</div></div>
+
+<div class="box change"><h3>D2 · İşin yapılışı</h3>
+<div class="row old"><b>Eskiden</b>Bir kişi ipliği hazırlar, dokur ve kumaşı baştan sona kendisi bitirirdi.</div>
+<div class="row new"><b>Şimdi</b>Her işçi tek bir işi yapıyor: biri ipliği hazırlıyor, biri makine başında dokuyor, biri kontrol ediyor. Hızı makine belirliyor.</div></div>
+
+<div class="box change"><h3>D3 · Yaşam ve iş yeri</h3>
+<div class="row old"><b>Eskiden</b>Ev ve iş yeri aynıydı. Aile birlikte çalışır, çocuklar da evde bakılırdı.</div>
+<div class="row new"><b>Şimdi</b>İş yeri evden uzakta. Birçok aile kasabaya taşındı, çocukları kim bakacak sorusu ortaya çıktı.</div></div>
+
+<div class="box change"><h3>D4 · Kazanç</h3>
+<div class="row old"><b>Eskiden</b>Gelir, ürünün ne kadar satıldığına bağlıydı. Bazı mevsimler bol, bazıları kıttı.</div>
+<div class="row new"><b>Şimdi</b>Her hafta düzenli ücret var. Ama işten çıkarılırsan gelir bir anda kesiliyor.</div></div>
+
+<div class="box change"><h3>D5 · Denetim ve koşullar</h3>
+<div class="row old"><b>Eskiden</b>İşin başında aile büyüğü vardı, işi kendi hızında yapardın.</div>
+<div class="row new"><b>Şimdi</b>Ustabaşı salonu gözetliyor, vardiyalar uzun, makine başında kazalar oluyor. Kadınlar ve çocuklar da çalışıyor.</div></div>
+
+<h2>Köylüler ne diyor?</h2>
+<blockquote>“Evde işin başında ben vardım. Şimdi başımda bir düdük var.”<cite>Hatice, evde dokuyan dokumacı</cite></blockquote>
+<blockquote>“İlk defa her hafta cebime para giriyor. Kendi paramı kendim harcıyorum.”<cite>Mehmet, fabrikada çalışmaya başlayan genç</cite></blockquote>
+<blockquote>“Zaman para demektir. Geç gelen işçinin yerine makine durmaz.”<cite>Fabrika sahibinin ustabaşısı</cite></blockquote>
+
+<div class="vote"><p><b>Ön görüş (sessiz, bireysel)</b></p>
+<p>Mehmet fabrikada çalışmalı mı? İçinizden birini seçin, hocanız elle oylama yapacak:</p>
+<p>A) Evet, fabrika daha iyi &nbsp; B) Kararsızım, iki tarafın da bedeli var &nbsp; C) Hayır, evde kalmalı</p></div>
+</section>
+
+<section id="gorev" hidden>
+<h2>Grup görevleri</h2>
+<p class="lead">Grupta okuyucu, not tutucu, sözcü ve katkı takipçisi olsun. Notlarınızı defterinize alın.</p>
+<div class="box">
+<b>Hatırlatma: Sanayi Devrimi’nin beş temel değişimi</b>
+<ul class="chips"><li>Zaman disiplini</li><li>İş bölümü ve makineleşme</li><li>Evden ayrı iş yeri ve kentleşme</li><li>Ücretli emek</li><li>Fabrika sistemi ve denetim</li></ul></div>
+
+<div class="box task"><h3>Görev 1 · Eşleştir <span class="time">8 dk</span></h3>
+<p>D1’den D5’e her değişikliği en uygun kavramla eşleştirin ve nedenini bir cümleyle yazın. Birden fazla kavram uygun olabilir; önemli olan gerekçeniz.</p></div>
+
+<div class="box task"><h3>Görev 2 · Bugünkü iz <span class="time">7 dk</span></h3>
+<p>Bu değişimlerin bugünkü izini bulun. Herkes bir örnek versin: mesai ve kartlı giriş, vardiya, iş tanımı, çağrı merkezi, kargo ve depo işleri, maaş bordrosu, iş güvenliği eğitimi, uzaktan çalışma, ders saatleri ve yoklama.</p></div>
+
+<div class="box task"><h3>Görev 3 · Kazanılan, kaybedilen, tavsiye <span class="time">8 dk</span></h3>
+<ul class="plain"><li>Bu dönüşümle neler kazanıldı, neler kaybedildi?</li><li>Hatice’nin kaygısında haklı olduğu yer var mı?</li><li>İK uzmanı olarak fabrika yöneticisine tek cümlelik bir tavsiyeniz ne olurdu?</li><li>Bonus: Geçen haftaki Aydınlanma ilkelerinden hangisi bu hikâyede kendini gösteriyor?</li></ul></div>
+
+<div class="box"><b>Paylaşım turu</b><p>Hocanız gruplara D1–D5 arasından bir değişiklik atayacak. Atanan değişiklik için 1 dakikada şunu anlatın: hangi kavram, neden ve bugünkü bir örneği?</p></div>
+</section>
+
+<section id="kapanis" hidden>
+<h2>Kapanış cümlesi</h2>
+<p>Bireysel çalışın, 5 dakika. Aşağıdaki cümleyi kendi kelimelerinizle tamamlayıp defterinize yazın:</p>
+<p class="sentence">Sanayi Devrimi, … sayesinde çalışmayı … şekilde değiştirdi; bugünkü iş yerlerinde bunun izi … uygulamasında görülür.</p>
+<div class="box"><b>Yazmadan önce kontrol edin</b>
+<ul class="plain"><li>Bir kavram adı kullandım mı?</li><li>Hikâyeden ya da bugünden somut bir örnek verdim mi?</li><li>Bir kazanımı veya bedeli belirttim mi?</li></ul></div>
+<div class="vote"><p><b>Son görüş</b></p><p>Başta seçtiğiniz görüş (A, B ya da C) değişti mi? Neden?</p></div>
+</section>
+</main>
+<script>
+(function(){
+var tabs=document.querySelectorAll('nav button');
+tabs.forEach(function(b){b.addEventListener('click',function(){
+tabs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+['olay','gorev','kapanis'].forEach(function(id){document.getElementById(id).hidden=(id!==b.dataset.t)});
+window.scrollTo(0,0);
+})});
+})();
+</script>
+</body>
+</html>
