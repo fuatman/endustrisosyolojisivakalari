@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yıldız Fırın’da Yeni Dönem</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#ffffff;--ink:#1c2836;--muted:#566476;--line:#d5dbe4;--accent:#9a5b0c;--accent-bg:#fbefd9;--old:#e9ecf1;--new:#e3f0ea;--newink:#1d5a43;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121821;--surface:#1b2431;--ink:#e8edf4;--muted:#a3afbf;--line:#2f3b4b;--accent:#f0b35c;--accent-bg:#3a2b12;--old:#243040;--new:#173a2d;--newink:#9fdcc1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121821;--surface:#1b2431;--ink:#e8edf4;--muted:#a3afbf;--line:#2f3b4b;--accent:#f0b35c;--accent-bg:#3a2b12;--old:#243040;--new:#173a2d;--newink:#9fdcc1;color-scheme:dark}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1{font:700 1.7rem/1.2 Georgia,"Times New Roman",serif;margin:8px 0 6px}
+h2{font:700 1.2rem/1.3 Georgia,serif;margin:28px 0 10px}
+.lead{color:var(--muted);margin:0 0 16px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+nav button{flex:1;padding:10px 4px;font:600 .95rem system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+section[hidden]{display:none}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.change h3{margin:0 0 8px;font-size:1rem}
+.row{padding:8px 10px;border-radius:8px;margin:6px 0;font-size:.97rem}
+.row b{display:block;font-size:.85rem;color:var(--muted)}
+.old{background:var(--old)}.new{background:var(--new)}.new b{color:var(--newink)}
+blockquote{margin:10px 0;padding:6px 0 6px 14px;border-left:4px solid var(--accent)}
+blockquote cite{display:block;color:var(--muted);font-size:.88rem;font-style:normal}
+.vote{background:var(--accent-bg);border-radius:12px;padding:14px 16px;margin:18px 0}
+.vote p{margin:4px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;padding:0;list-style:none}
+.chips li{background:var(--accent-bg);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.9rem}
+.task{border-left:4px solid var(--accent)}
+.time{color:var(--accent);font-weight:700}
+ul.plain{padding-left:20px;margin:8px 0}
+.sentence{font:italic 1.05rem/1.6 Georgia,serif;background:var(--surface);border:1px dashed var(--accent);border-radius:12px;padding:14px 16px}
+</style>
+</head>
+<body>
+<main>
+<h1>Yıldız Fırın’da Yeni Dönem</h1>
+<p class="lead">Aydınlanma ve modern çalışma dünyası. Etkinlik 50 dakika sürer: önce sessizce okuyacak, sonra grubunuzla çalışacaksınız.</p>
+
+<nav role="tablist" aria-label="Bölümler">
+<button role="tab" aria-selected="true" data-t="olay">Olay</button>
+<button role="tab" aria-selected="false" data-t="gorev">Görevler</button>
+<button role="tab" aria-selected="false" data-t="kapanis">Kapanış</button>
+</nav>
+
+<section id="olay">
+<h2>Olay</h2>
+<p>Söke’de 1985’ten beri çalışan Yıldız Fırın, Hasan Usta’nın küçük bir aile işletmesi olarak başladı. Bugün 3 şubesi ve 60 çalışanı var. İşletme mezunu kızı Elif, iki yıl önce fırına insan kaynakları sorumlusu olarak döndü ve işleyişi değiştirmeye başladı.</p>
+
+<div class="box change"><h3>D1 · İşe alım</h3>
+<div class="row old"><b>Eskiden</b>Kadro hep tanıdıklardan, akrabalardan ve hemşerilerden oluşurdu.</div>
+<div class="row new"><b>Şimdi</b>Açık ilan veriliyor, herkese aynı mülakat soruları soruluyor, adaylar kısa bir uygulama denemesi yapıyor.</div></div>
+
+<div class="box change"><h3>D2 · Yazılı kurallar</h3>
+<div class="row old"><b>Eskiden</b>Mesai, izin ve ücret ustanın o günkü kararına bağlıydı.</div>
+<div class="row new"><b>Şimdi</b>Yazılı iş sözleşmesi, görev tanımı ve mesai kuralları var. Patronun yeğeni dahil herkes için aynı.</div></div>
+
+<div class="box change"><h3>D3 · Terfi ve zam</h3>
+<div class="row old"><b>Eskiden</b>Sadakat ve ustanın gözüne girmek belirleyiciydi.</div>
+<div class="row new"><b>Şimdi</b>Açık kriterlere dayalı değerlendirme yapılıyor, üç ayda bir herkese geri bildirim veriliyor.</div></div>
+
+<div class="box change"><h3>D4 · Çalışma yöntemi</h3>
+<div class="row old"><b>Eskiden</b>“Biz hep böyle yaptık” demek yeterliydi.</div>
+<div class="row new"><b>Şimdi</b>Fire oranı ve üretim süresi ölçülüyor. İki farklı hamur yöntemi denendi, verisi daha iyi olan seçildi.</div></div>
+
+<div class="box change"><h3>D5 · Söz hakkı</h3>
+<div class="row old"><b>Eskiden</b>“Büyüğün sözü senettir.” Karara itiraz edilmezdi.</div>
+<div class="row new"><b>Şimdi</b>Ayda bir öneri toplantısı yapılıyor, kararlar gerekçesiyle duyuruluyor, itiraz edilebiliyor.</div></div>
+
+<h2>Çalışanlar ne diyor?</h2>
+<blockquote>“Eskiden aile gibiydik. Şimdi tablolarda bir rakamım.”<cite>Kemal Usta, 28 yıllık fırıncı</cite></blockquote>
+<blockquote>“İlk kez neden zam alamadığımı ve neyi düzeltmem gerektiğini biliyorum.”<cite>Zeynep, işe yeni başladı</cite></blockquote>
+<blockquote>“Artık bana ayrıcalık yok. Bu haksızlık mı, adalet mi?”<cite>Mert, Hasan Usta’nın yeğeni</cite></blockquote>
+
+<div class="vote"><p><b>Ön görüş (sessiz, bireysel)</b></p>
+<p>Elif’in değişimleri için içinizden birini seçin, hocanız elle oylama yapacak:</p>
+<p>A) Kesinlikle doğru &nbsp; B) Doğru ama eksik &nbsp; C) Fazla ileri gitmiş</p></div>
+</section>
+
+<section id="gorev" hidden>
+<h2>Grup görevleri</h2>
+<p class="lead">Grupta okuyucu, not tutucu, sözcü ve katkı takipçisi olsun. Notlarınızı defterinize alın.</p>
+<div class="box">
+<b>Hatırlatma: Aydınlanmanın beş ilkesi</b>
+<ul class="chips"><li>Akıl ve bilimsel düşünce</li><li>Birey ve haklar</li><li>Eşit ve ortak kurallar</li><li>Geleneği ve otoriteyi sorgulama</li><li>İlerleme inancı</li></ul></div>
+
+<div class="box task"><h3>Görev 1 · Eşleştir <span class="time">8 dk</span></h3>
+<p>D1’den D5’e her değişikliği en uygun ilkeyle eşleştirin ve nedenini bir cümleyle yazın. Birden fazla ilke uygun olabilir; önemli olan gerekçeniz.</p></div>
+
+<div class="box task"><h3>Görev 2 · Kendi deneyiminiz <span class="time">7 dk</span></h3>
+<p>Bu ilkelerin izini kendi hayatınızda bulun. Herkes bir örnek versin: staj, part-time iş, başvuru ya da mülakat deneyimi, ders notlandırma kriterleri, sınav itiraz hakkı, kulüp yönetmeliği.</p></div>
+
+<div class="box task"><h3>Görev 3 · Kazanılan ve kaybedilen <span class="time">8 dk</span></h3>
+<ul class="plain"><li>Bu değişimle işletmede neler kazanıldı?</li><li>Kemal Usta’nın itirazında haklı olduğu yer var mı? Neler kaybedilmiş olabilir?</li><li>İK uzmanı olsaydınız Elif’e tek cümlelik bir tavsiyeniz ne olurdu?</li></ul></div>
+
+<div class="box"><b>Paylaşım turu</b><p>Hocanız gruplara D1–D5 arasından bir değişiklik atayacak. Atanan değişiklik için 1 dakikada şunu anlatın: hangi ilke ve neden?</p></div>
+</section>
+
+<section id="kapanis" hidden>
+<h2>Kapanış cümlesi</h2>
+<p>Bireysel çalışın, 5 dakika. Aşağıdaki cümleyi kendi kelimelerinizle tamamlayıp defterinize yazın:</p>
+<p class="sentence">Aydınlanma, … fikri sayesinde iş yerinde … uygulamasını mümkün kıldı; ancak … sınırı vardır.</p>
+<div class="box"><b>Yazmadan önce kontrol edin</b>
+<ul class="plain"><li>Bir ilke adı kullandım mı?</li><li>Olaydan ya da kendi hayatımdan somut bir örnek verdim mi?</li><li>Bir kazanımı veya sınırı belirttim mi?</li></ul></div>
+<div class="vote"><p><b>Son görüş</b></p><p>Başta seçtiğiniz görüş (A, B ya da C) değişti mi? Neden?</p></div>
+</section>
+</main>
+<script>
+(function(){
+var tabs=document.querySelectorAll('nav button');
+tabs.forEach(function(b){b.addEventListener('click',function(){
+tabs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+['olay','gorev','kapanis'].forEach(function(id){document.getElementById(id).hidden=(id!==b.dataset.t)});
+window.scrollTo(0,0);
+})});
+})();
+</script>
+</body>
+</html>
