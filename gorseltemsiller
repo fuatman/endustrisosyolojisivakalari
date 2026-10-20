@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Görseli Oku - Çalışma ve Toplum</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #24292f;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f6f8fa;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+    h1 { border-bottom: 2px solid #eaecef; padding-bottom: 10px; color: #1f2328; font-size: 1.8rem; }
+    h2 { margin-top: 25px; color: #24292f; font-size: 1.4rem; border-bottom: 1px solid #d0d7de; padding-bottom: 6px; }
+    h3 { font-size: 1.2rem; color: #0969da; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { border: 1px solid #d0d7de; padding: 10px; text-align: left; }
+    th { background-color: #f6f8fa; }
+    .card { background-color: #fcfcfc; border: 1px solid #e1e4e8; border-radius: 6px; padding: 20px; margin: 25px 0; }
+    .img-box { text-align: center; margin: 15px 0; }
+    img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+    blockquote { border-left: 4px solid #0969da; margin: 15px 0; padding: 10px 15px; background: #f6f8fa; }
+    .cue { font-weight: bold; color: #57606a; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>ÇALIŞMA VE TOPLUM · GÖRSEL TEMSİLLER</h1>
+  <p><strong>Etkinlik: “Görseli Oku”</strong> · Grup çalışma kâğıdı · Süre: yaklaşık 30 dakika</p>
+  
+  <h3>Amaç</h3>
+  <p>Bir görsel, gerçekliği olduğu gibi göstermez; birinin bakışını ve amacını taşır. Bu etkinlikte elinizdeki görseli bir kaynak gibi okuyacak, görselin hangi mesajı verdiğini ve neyi dışarıda bıraktığını tartışacaksınız.</p>
+
+  <h2>Nasıl İşleyecek?</h2>
+  <table>
+    <tr><th>Bölüm</th><th>Süre</th><th>Ne yapacaksınız?</th></tr>
+    <tr><td>Giriş</td><td>3 dk</td><td>Eğitmen etkinliği ve kuralları anlatır, gruplara kartlar dağıtılır.</td></tr>
+    <tr><td>Grup çalışması</td><td>10 dk</td><td>Kartınızdaki görseli inceleyin, dört soruyu birlikte tartışın ve cevaplarınızı yazın.</td></tr>
+    <tr><td>Sunumlar</td><td>10 dk</td><td>Her grup en fazla 2 dakika sunar. Sunumu bir grup üyesi yapar; dinleyen gruplar not alır.</td></tr>
+    <tr><td>Ortak değerlendirme</td><td>5 dk</td><td>Görseller arasındaki farklar ve benzerlikler birlikte tartışılır.</td></tr>
+    <tr><td>Çıkış notu</td><td>2 dk</td><td>Her öğrenci kâğıdın son sayfasındaki tek cümlelik notu doldurur.</td></tr>
+  </table>
+
+  <h2>Grup Çalışma Kuralları</h2>
+  <ul>
+    <li>Gruplar 4–5 kişiden oluşur. Rol dağılımı: sunucu, yazıcı, zaman tutucu, görsel okuyucu.</li>
+    <li>Önce görsele sessizce 1 dakika bakın; ancak ondan sonra tartışmaya başlayın.</li>
+    <li>Cevaplarınızda mutlaka görselden somut bir ayrıntıya dayanın (işçilerin kameraya bakması, makineler vb.).</li>
+    <li>“Doğru–yanlış” cevap yoktur ama gerekçesiz cevap da kabul edilmez. Her yorumun nedenini söyleyin.</li>
+    <li>Bilmediğiniz bir şeyi varsayım olarak belirtin: <em>“Bu fotoğrafı bir şirketin çektirmiş olabileceğini düşünüyoruz çünkü…”</em></li>
+  </ul>
+
+  <blockquote>
+    <strong>Hatırlatma: Dört Soru Çerçevesi</strong><br>
+    Kim üretti? · Kimin için ve neden? · Ne gösteriliyor, ne gösterilmiyor? · Nasıl gösteriliyor?
+  </blockquote>
+
+  <!-- KART 1 -->
+  <div class="card">
+    <h2>Grup Kartı 1</h2>
+    <p class="cue">Künye: Fotoğraf · ABD · 20. yüzyılın başı · Ulusal Çocuk Emeği Komitesi (NCLC) arşivinden</p>
+    <p><strong>Lewis Hine — iplik fabrikasında çalışan çocuklar</strong></p>
+    <div class="img-box">
+      <img src="1.jpg" alt="Lewis Hine - İplik fabrikasında çalışan çocuklar">
+    </div>
+    <p>Grup üyeleri: ______________________________________________________________</p>
+    <table>
+      <tr><th>Soru</th><th>Grubumuzun cevabı</th></tr>
+      <tr><td>1. Kim üretti?</td><td></td></tr>
+      <tr><td>2. Kimin için ve neden?</td><td></td></tr>
+      <tr><td>3. Ne gösteriliyor, ne gösterilmiyor?</td><td></td></tr>
+      <tr><td>4. Nasıl gösteriliyor?</td><td></td></tr>
+    </table>
+    <p><strong>Sunum için tek cümle:</strong> <em>Bu görsel bize ______________________________ gösteriyor, ancak ______________________________ göstermiyor.</em></p>
+  </div>
+
+  <!-- KART 2 -->
+  <div class="card">
+    <h2>Grup Kartı 2</h2>
+    <p class="cue">Künye: Fotoğraf · River Rouge fabrikası, ABD · 1917–1941 arasında şirketin fotoğraf biriminde çekilmiş</p>
+    <p><strong>Ford Foto-Film Departmanı — River Rouge fabrikası</strong></p>
+    <div class="img-box">
+      <img src="2.jpeg" alt="Ford Foto-Film Departmanı">
+    </div>
+    <p>Grup üyeleri: ______________________________________________________________</p>
+    <table>
+      <tr><th>Soru</th><th>Grubumuzun cevabı</th></tr>
+      <tr><td>1. Kim üretti?</td><td></td></tr>
+      <tr><td>2. Kimin için ve neden?</td><td></td></tr>
+      <tr><td>3. Ne gösteriliyor, ne gösterilmiyor?</td><td></td></tr>
+      <tr><td>4. Nasıl gösteriliyor?</td><td></td></tr>
+    </table>
+    <p><strong>Sunum için tek cümle:</strong> <em>Bu görsel bize ______________________________ gösteriyor, ancak ______________________________ göstermiyor.</em></p>
+  </div>
+
+  <!-- KART 3 -->
+  <div class="card">
+    <h2>Grup Kartı 3</h2>
+    <p class="cue">Künye: Duvar resmi · Detroit, ABD · 1932–33</p>
+    <p><strong>Diego Rivera — Detroit Industry</strong></p>
+    <div class="img-box">
+      <img src="3.jpg" alt="Diego Rivera - Detroit Industry">
+    </div>
+    <p>Grup üyeleri: ______________________________________________________________</p>
+    <table>
+      <tr><th>Soru</th><th>Grubumuzun cevabı</th></tr>
+      <tr><td>1. Kim üretti?</td><td></td></tr>
+      <tr><td>2. Kimin için ve neden?</td><td></td></tr>
+      <tr><td>3. Ne gösteriliyor, ne gösterilmiyor?</td><td></td></tr>
+      <tr><td>4. Nasıl gösteriliyor?</td><td></td></tr>
+    </table>
+    <p><strong>Sunum için tek cümle:</strong> <em>Bu görsel bize ______________________________ gösteriyor, ancak ______________________________ göstermiyor.</em></p>
+  </div>
+
+  <!-- KART 4 -->
+  <div class="card">
+    <h2>Grup Kartı 4</h2>
+    <p class="cue">Künye: Afiş · Türkiye · 2014 · Sendika tarafından hazırlanmış</p>
+    <p><strong>DİSK 1 Mayıs afişi (2014)</strong></p>
+    <div class="img-box">
+      <img src="4.jpeg" alt="DİSK 1 Mayıs afişi">
+    </div>
+    <p>Grup üyeleri: ______________________________________________________________</p>
+    <table>
+      <tr><th>Soru</th><th>Grubumuzun cevabı</th></tr>
+      <tr><td>1. Kim üretti?</td><td></td></tr>
+      <tr><td>2. Kimin için ve neden?</td><td></td></tr>
+      <tr><td>3. Ne gösteriliyor, ne gösterilmiyor?</td><td></td></tr>
+      <tr><td>4. Nasıl gösteriliyor?</td><td></td></tr>
+    </table>
+    <p><strong>Sunum için tek cümle:</strong> <em>Bu görsel bize ______________________________ gösteriyor, ancak ______________________________ göstermiyor.</em></p>
+  </div>
+
+  <!-- KART 5 -->
+  <div class="card">
+    <h2>Grup Kartı 5</h2>
+    <p class="cue">Künye: Fotoğraf · İstanbul · 20. yüzyılın ikinci yarısı</p>
+    <p><strong>Ara Güler — İstanbul’da Alınteri</strong></p>
+    <div class="img-box">
+      <img src="5.jpeg" alt="Ara Güler - İstanbul’da Alınteri">
+    </div>
+    <p>Grup üyeleri: ______________________________________________________________</p>
+    <table>
+      <tr><th>Soru</th><th>Grubumuzun cevabı</th></tr>
+      <tr><td>1. Kim üretti?</td><td></td></tr>
+      <tr><td>2. Kimin için ve neden?</td><td></td></tr>
+      <tr><td>3. Ne gösteriliyor, ne gösterilmiyor?</td><td></td></tr>
+      <tr><td>4. Nasıl gösteriliyor?</td><td></td></tr>
+    </table>
+    <p><strong>Sunum için tek cümle:</strong> <em>Bu görsel bize ______________________________ gösteriyor, ancak ______________________________ göstermiyor.</em></p>
+  </div>
+
+  <h2>Çıkış Notu (Bireysel)</h2>
+  <p>Bugün gördüğünüz görsellerden birini seçin. Bu görselin neyi gösterdiğini ve neyi gizlediğini tek cümleyle yazın.</p>
+  <p><strong>Seçtiğim görsel:</strong> ________________________________________________</p>
+  <p><strong>Gösterdiği:</strong> ______________________________________________________________________________</p>
+  <p><strong>Gizlediği:</strong> _______________________________________________________________________________</p>
+
+  <h2>Düşünmeye Devam Edin</h2>
+  <p><em>Kendi çevrenizdeki bir işi tek bir fotoğrafla anlatsaydınız neyi çerçeveye alır, neyi dışarıda bırakırdınız?</em></p>
+</div>
+
+</body>
+</html>
