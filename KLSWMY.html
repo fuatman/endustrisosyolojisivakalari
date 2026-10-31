@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Film sonrası etkinlik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceff2;--card:#fff;--ink:#17202b;--mute:#5b6674;--line:#c9d0d8;--hi:#f2c200;--hiink:#17202b;--sel:#17202b;--selink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#12171d;--card:#1b222b;--ink:#eef1f4;--mute:#9aa6b4;--line:#34404d;--hi:#f2c200;--hiink:#17202b;--sel:#eef1f4;--selink:#17202b}}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font:17px/1.5 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 0}
+header{padding:14px 18px 6px}
+.bar{display:flex;gap:5px}
+.bar i{flex:1;height:5px;background:var(--line);border-radius:3px}
+.bar i.on{background:var(--ink)}
+main{max-width:620px;margin:0 auto;padding:10px 18px 120px}
+section{display:none}
+section.show{display:block}
+.who{display:inline-block;background:var(--hi);color:var(--hiink);font-weight:800;font-size:14px;padding:3px 10px;border-radius:3px;margin:6px 0 0}
+h1{font-size:30px;line-height:1.15;font-weight:800;margin:14px 0 10px}
+h2{font-size:24px;line-height:1.2;font-weight:800;margin:12px 0 8px}
+p{margin:0 0 12px}
+.mute{color:var(--mute);font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0}
+.ticket{border:2px dashed var(--ink);background:var(--card);padding:18px;margin:16px 0;border-radius:4px}
+.ticket b{display:block;font-size:13px;color:var(--mute);font-weight:600;margin-bottom:4px}
+label,.q{display:block;font-weight:600;margin:18px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--sel);color:var(--selink);border-color:var(--sel)}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:11px}
+textarea{min-height:92px;resize:vertical}
+input[type=range]{width:100%;accent-color:var(--ink);margin:6px 0}
+.ends{display:flex;justify-content:space-between;font-size:14px;color:var(--mute)}
+.val{font-weight:800;font-size:22px;text-align:center}
+.recap dt{font-size:14px;color:var(--mute);margin-top:10px}
+.recap dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.big{font-size:21px;font-weight:600;line-height:1.35;margin:0 0 16px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;justify-content:center}
+nav button{font:inherit;font-weight:800;border-radius:8px;padding:12px 22px;border:2px solid var(--ink);cursor:pointer}
+#back{background:transparent;color:var(--ink)}
+#next{background:var(--ink);color:var(--bg);flex:1;max-width:340px}
+nav button:disabled{opacity:.3;cursor:default}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+</style>
+</head>
+<body>
+<header><div class="bar" id="bar"></div></header>
+<main>
+
+<section>
+  <div class="ticket"><b>Film bitti</b><h1 style="margin:0">Şimdi sıra sizde.</h1></div>
+  <p>Doğru ya da yanlış cevap yok. Amaç filmi nasıl gördüğünüzü fark etmek ve sınıfta karşılaştırmak.</p>
+  <p class="mute">Yazdıklarınız hiçbir yere gönderilmez; yalnızca bu telefonda kalır. Ekranı yanınızdakine gösterip göstermemek size kalmış. Sayfayı yenilerseniz yazdıklarınız silinir.</p>
+  <div class="card">
+    <b>Akış (yaklaşık 20 dakika)</b>
+    <p class="mute" style="margin:6px 0 0">Önce tek başınıza (8 dk), sonra ikili (4 dk), sonra grupla (5 dk), en sonda hep birlikte.</p>
+  </div>
+</section>
+
+<section>
+  <span class="who">Tek başına</span>
+  <h2>İlk an</h2>
+  <div class="q">Son sahneden sonra şu an ne hissediyorsun? (en fazla 2)</div>
+  <div class="chips" data-k="feel" data-max="2">
+    <button>öfke</button><button>üzüntü</button><button>çaresizlik</button><button>tanıdık geldi</button><button>uzak geldi</button><button>suçluluk</button><button>umut</button><button>boşluk</button><button>yorgunluk</button><button>kararsızlık</button>
+  </div>
+  <label for="image">Aklında kalan tek bir görüntü ya da an</label>
+  <textarea id="image" data-k="image" placeholder="Bir kare, bir cümle, bir ses…"></textarea>
+</section>
+
+<section>
+  <span class="who">Tek başına</span>
+  <h2>Ricky ne kadar özgür?</h2>
+  <p>Filmin başında Ricky kendi işinin patronu olmak istiyor. Peki filmin sonunda nerede duruyor?</p>
+  <div class="val" id="sv">?</div>
+  <input type="range" min="0" max="10" value="5" id="sl" aria-label="Ricky ne kadar özgür">
+  <div class="ends"><span>Tamamen bağımlı</span><span>Tamamen özgür</span></div>
+  <label for="why">Neden oraya koydun? Filmden bir an ya da ayrıntıyla açıkla.</label>
+  <textarea id="why" data-k="why"></textarea>
+</section>
+
+<section>
+  <span class="who">Tek başına</span>
+  <h2>Kim sorumlu?</h2>
+  <div class="q">Ricky ailesinin yaşadıklarında en çok sorumlu olan kim ya da ne? (bir tane seç)</div>
+  <div class="chips" data-k="resp" data-max="1">
+    <button>Ricky’nin kendisi</button><button>Maloney</button><button>Şirket</button><button>Düzenin kendisi</button><button>Hiç kimse, talihsizlik</button><button>Başka…</button>
+  </div>
+  <label for="resptxt">Seçimini tek cümleyle savun.</label>
+  <textarea id="resptxt" data-k="resptxt"></textarea>
+  <div class="q">Bir karakter seç: kimin yerinde olmak en zor?</div>
+  <div class="chips" data-k="who" data-max="1">
+    <button>Ricky</button><button>Abby</button><button>Seb</button><button>Liza Jane</button><button>Maloney</button>
+  </div>
+</section>
+
+<section>
+  <span class="who">İkili</span>
+  <h2>Yanındakiyle karşılaştır</h2>
+  <div class="card recap"><b>Senin yanıtların</b><dl id="recap" style="margin:0"></dl></div>
+  <p>Ekranları göster. Sonra birlikte:</p>
+  <div class="card">
+    <p class="big">Aranızdaki en büyük fark nerede? Öbürünün gerekçesi sizi biraz kaydırdı mı?</p>
+    <p class="mute" style="margin:0">Ortak sonuç bulmanız gerekmiyor. Farkı net söyleyebilmeniz yeterli.</p>
+  </div>
+</section>
+
+<section>
+  <span class="who">Grup (4–5 kişi)</span>
+  <h2>Filme yeni bir başlık</h2>
+  <p>Filmin adı, bir teslimat kartındaki cümle. Grup olarak sizin başlığınız ne olurdu?</p>
+  <label for="title">Yeni başlık</label>
+  <input type="text" id="title" data-k="title">
+  <label for="scene">Filme eklenecek bir sahne (bir cümle)</label>
+  <textarea id="scene" data-k="scene" placeholder="Bu sahnede ne görürdük?"></textarea>
+  <label for="dq">Yönetmene sormak istediğiniz tek soru</label>
+  <textarea id="dq" data-k="dq" style="min-height:70px"></textarea>
+</section>
+
+<section>
+  <span class="who">Bütün sınıf</span>
+  <h2>Birlikte konuşalım</h2>
+  <div class="card"><p class="big">Her grup başlığını okusun. Neden bu başlık?</p></div>
+  <div class="card"><p class="big">Ricky’yi ne kadar özgür bulduğunuz konusunda sınıfta en uçtaki iki kişi kim? Gerekçelerini duyalım.</p></div>
+  <div class="card"><p class="big">Kimse “sorumlu” seçilmeyince ne olur?</p></div>
+</section>
+
+<section>
+  <span class="who">Tek başına, son</span>
+  <h2>Bir cümle</h2>
+  <label for="close">“Bu film bana şunu soruyor: …”</label>
+  <textarea id="close" data-k="close"></textarea>
+  <div class="card" id="task" hidden>
+    <b>Gelecek hafta için küçük bir görev</b>
+    <p style="margin:8px 0" id="tasktext"></p>
+  </div>
+</section>
+
+</main>
+<nav><button id="back">Geri</button><button id="next">Başla</button></nav>
+
+<script>
+// Öğretmen ayarı: görevi göstermek istemezsen false yap.
+const SHOW_TASK = true;
+const TASK = "Bu hafta bir gün, çevrendeki bir “hizmet anı”na dikkat et: bir kurye, kasiyer, çağrı merkezi çalışanı, temizlik ya da bakım işi yapan biri, bir uygulama bildirimi. Kimseyi fotoğraflama ve isim yazma. Sadece notlarına şunları yaz: bu kişi ne zaman çalışıyor, işini kim denetliyor, işi bir hata yapsa ne olur? Sonra filmden bir sahneyi seç ve notlarınla yan yana koy. Gelecek hafta bir iki cümleyle paylaşacaksın.";
+
+const S = {feel:[], resp:[], who:[], free:null};
+const secs = [...document.querySelectorAll("section")];
+const bar = document.getElementById("bar");
+const back = document.getElementById("back"), next = document.getElementById("next");
+let cur = 0;
+secs.forEach(() => bar.appendChild(document.createElement("i")));
+
+function recap(){
+  const rows = [
+    ["Hissettiğim", S.feel.join(", ")],
+    ["Aklımda kalan", S.image],
+    ["Ricky’nin özgürlüğü (0 bağımlı, 10 özgür)", S.free === null ? "" : S.free],
+    ["Gerekçem", S.why],
+    ["Sorumlu", [S.resp[0], S.resptxt].filter(Boolean).join(": ")],
+    ["Yerinde olmak en zor", S.who[0]]
+  ];
+  const dl = document.getElementById("recap");
+  dl.textContent = "";
+  rows.forEach(([k,v]) => {
+    const dt = document.createElement("dt"); dt.textContent = k;
+    const dd = document.createElement("dd"); dd.textContent = v || "—";
+    dl.append(dt, dd);
+  });
+}
+
+function show(n){
+  cur = n;
+  secs.forEach((s,i) => s.classList.toggle("show", i === n));
+  [...bar.children].forEach((b,i) => b.classList.toggle("on", i <= n));
+  back.disabled = n === 0;
+  next.textContent = n === 0 ? "Başla" : n === secs.length - 1 ? "Bitti" : "İleri";
+  next.disabled = n === secs.length - 1;
+  if (n === 3) recap();
+  window.scrollTo(0,0);
+}
+next.onclick = () => show(Math.min(cur + 1, secs.length - 1));
+back.onclick = () => show(Math.max(cur - 1, 0));
+
+document.querySelectorAll(".chips").forEach(g => {
+  const k = g.dataset.k, max = +g.dataset.max;
+  g.querySelectorAll("button").forEach(b => b.onclick = () => {
+    const v = b.textContent, i = S[k].indexOf(v);
+    if (i >= 0) S[k].splice(i,1);
+    else { if (S[k].length >= max) { S[k].shift(); } S[k].push(v); }
+    g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", S[k].includes(x.textContent)));
+  });
+});
+document.querySelectorAll("[data-k]").forEach(el => {
+  if (el.classList.contains("chips")) return;
+  el.addEventListener("input", () => S[el.dataset.k] = el.value.trim());
+});
+const sl = document.getElementById("sl"), sv = document.getElementById("sv");
+sl.addEventListener("input", () => { S.free = +sl.value; sv.textContent = sl.value; });
+
+if (SHOW_TASK){
+  document.getElementById("task").hidden = false;
+  document.getElementById("tasktext").textContent = TASK;
+}
+show(0);
+</script>
+</body>
+</html>
