@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Çalışmanın tarihi: ders sonu etkinliği</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8edf0;--card:#fff;--ink:#14232b;--mute:#566570;--line:#c3cdd4;--blue:#2447d6;--ok:#17794a;--okbg:#e1f3e9;--no:#b3261e;--nobg:#fbe5e3}
+@media (prefers-color-scheme:dark){:root{--bg:#10181d;--card:#19242b;--ink:#ecf1f4;--mute:#97a6b1;--line:#32434d;--blue:#8fa6ff;--ok:#6fd49c;--okbg:#17302415;--nobg:#3a1c1a55;--no:#ff9a92}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.5 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;padding-top:env(safe-area-inset-top)}
+header{max-width:620px;margin:0 auto;padding:14px 18px 0}
+.card-row{display:flex;flex-wrap:wrap;gap:5px;padding:9px 11px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+.hole{width:13px;height:13px;border-radius:50%;border:2px solid var(--line)}
+.hole.on{background:var(--ink);border-color:var(--ink)}
+.hole.cur{border-color:var(--blue)}
+main{max-width:620px;margin:0 auto;padding:6px 18px 130px}
+.mode{display:inline-block;margin:14px 0 0;font-weight:700;font-size:14px;color:var(--blue)}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:800;line-height:1.15;margin:8px 0 12px}
+h1{font-size:32px}h2{font-size:24px}
+p{margin:0 0 12px}
+.mute{color:var(--mute);font-size:15px}
+.quote{border-left:4px solid var(--blue);padding:4px 0 4px 14px;font-family:Fraunces,Georgia,serif;font-size:20px;margin:14px 0}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;margin:9px 0;cursor:pointer}
+.opt.sel{border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.no{border-color:var(--no);background:var(--nobg)}
+.opt:disabled{cursor:default;color:var(--ink)}
+.fb{margin:14px 0;padding:12px 14px;border-radius:8px;background:var(--card);border:1px solid var(--line)}
+.fb b{display:block;margin-bottom:2px}
+.tag{font-size:14px;color:var(--mute)}
+.scale{display:flex;gap:8px;margin:10px 0 4px}
+.scale button{flex:1;font:inherit;font-weight:700;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:14px 0;cursor:pointer}
+.scale button.sel{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ends{display:flex;justify-content:space-between;font-size:14px;color:var(--mute)}
+label{display:block;font-weight:700;margin:18px 0 8px}
+textarea{width:100%;min-height:90px;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:11px;resize:vertical}
+.score{font-family:Fraunces,Georgia,serif;font-size:56px;font-weight:800;margin:6px 0}
+ul{padding-left:20px;margin:6px 0 14px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;justify-content:center}
+nav button{font:inherit;font-weight:700;border-radius:8px;padding:12px 22px;border:2px solid var(--ink);cursor:pointer}
+#back{background:transparent;color:var(--ink)}
+#next{background:var(--ink);color:var(--bg);flex:1;max-width:340px}
+nav button:disabled{opacity:.3;cursor:default}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+</style>
+</head>
+<body>
+<header><div class="card-row" id="holes" aria-hidden="true"></div></header>
+<main id="m"></main>
+<nav><button id="back">Geri</button><button id="next">Başla</button></nav>
+
+<script>
+// Yanıtlar yalnızca bu sayfanın belleğinde tutulur, hiçbir yere gönderilmez.
+const Q = [
+ {tag:"Etimoloji", q:"Fransızca “travail” sözcüğü, derste gördüğümüz çerçeveye göre hangi sözcükten türer?",
+  o:["Tripalium: üç kazıktan oluşan bir düzenek","Otium: boş vakit","Schole: öğrenme zamanı","Labor: ağır yük"],a:0,
+  f:"Tripalium, üç kazıklı bir düzenekti; hayvanları sabitlemek için ve bazı kaynaklara göre işkence aracı olarak kullanılırdı. Çalışmanın dildeki en eski izi acıyla iç içe."},
+ {tag:"Etimoloji", q:"Hangi sözcük kökeni bakımından “nispeten nötr” sayılır?",
+  o:["Work (Eski İngilizce weorc: yapılan şey, eser)","Labor (ağır yük, doğum sancısı)","Travail (tripalium)","Çalışmak (çal-: güç sarf etmek)"],a:0,
+  f:"Work Germen kökenlidir ve “eser, yapılan şey” gibi daha nötr bir anlam taşır. Labor ise doğum sancısıyla aynı sözcüktür; travail ve çalışmak da çaba ve zorlanma çağrıştırır."},
+ {tag:"Zaman ve iş disiplini", q:"Thompson’a göre zaman odaklı (time-oriented) çalışmada işçi esas olarak neyi satar?",
+  o:["Ürettiği somut ürünü","Tamamladığı görevi","Zamanının kendisini","Ustalığını"],a:2,
+  f:"Göreve dayalı çalışmada iş, bitmesiyle ölçülür. Fabrikayla birlikte işveren işçinin “saatini” satın alır; çalışma ölçülebilir bir birime (saat) dönüşür."},
+ {tag:"Antik Yunan", q:"“Antik Yunan’da çalışma her dönemde aşağılanırdı.” Bu ifade doğru mu?",
+  o:["Doğru","Yanlış"],a:1,
+  f:"Hesiodos (MÖ 8. yy) tarımsal emeği erdem ve şeref kaynağı olarak över. Klasik Çağ’da Platon ve Aristoteles ile ponos’a bakış belirgin biçimde olumsuzlaşır."},
+ {tag:"Antik Yunan", multi:true, q:"Aristoteles’e göre ücretli, bedensel (banausik) işler özgür yurttaşa neden yakışmaz? (iki doğru seçenek)",
+  o:["Beden ve zihni yorar, siyasete ve erdeme ayrılacak enerjiyi tüketir","Ücret karşılığı çalışmak kişiyi başkasına bağımlı kılar, bağımsızlığı (autarkeia) zedeler","Bu işler çok az kazandırır","Bu işler tanrılara saygısızlıktır"],a:[0,1],
+  f:"Schole (boş vakit) özgür yurttaşın siyasete ve düşünmeye ayırdığı zamandır. Ücretli işte ise bağımlılık sorunu vardır."},
+ {tag:"Roma", q:"Cicero’ya göre “bayağı” (sordidus) sayılan iş hangisidir?",
+  o:["Perakende ticaret ve zanaatkârlık","Büyük ölçekli tarım","Senatoda ve mahkemede yürütülen kamusal işler (negotium)","Kırsal villada felsefe yazmak (otium)"],a:0,
+  f:"Bu işler kâr güdüsüyle ve müşteriye bağımlı biçimde sürdürülür. Aristoteles’te olduğu gibi mesele işin kendisinden çok, kişinin bağımsızlığını koruyup koruyamamasıdır."},
+ {tag:"Orta Çağ", q:"Hristiyan manastır geleneğinde “ora et labora” (dua et ve çalış) ilkesi neyi ifade eder?",
+  o:["Elle çalışmayı ruhsal disiplinin parçası olarak kutsallaştırır","Çalışmayı ilk günahın cezası diye kınar","Çalışmayı yalnızca köylülere yasaklar","Çalışmayı kâr aracı olarak över"],a:0,
+  f:"Ama aynı Ortaçağ’da oratores, bellatores ve laboratores şeması elle çalışanları toplumsal hiyerarşinin en altına yerleştirmeye devam etti."},
+ {tag:"İbrahimî gelenek", q:"İbrahimî gelenek içinde çalışmaya bakış nasıl özetlenebilir?",
+  o:["Tekvin’de bir ceza, İslam’da ibadete yakın olumlu bir etkinlik: geniş bir yelpaze","Hepsinde çalışma yalnızca bir cezadır","Hepsinde çalışma yalnızca ibadettir","Çalışma konusu bu geleneklerde yer almaz"],a:0,
+  f:"Tekvin 3:19’da “alnının teriyle” ekmek kazanmak bir sonuçtur; Talmud geleneğinde emek onurlandırılır; İslam’da helal kazanç övülür, riba yasaklanır."},
+ {tag:"Kapitalizmle kırılma", q:"Weber’e göre Kalvinist inanç çalışmayı nasıl dönüştürdü?",
+  o:["Disiplinli ve başarılı bir meslek yaşamı, “seçilmişler” arasında olmanın işareti sayıldı","Çalışma yeniden ilk günahın cezası diye vurgulandı","Boş vakit en yüksek erdem oldu","Ticaret yasaklandı"],a:0,
+  f:"Beruf (meslek/çağrı) fikri ile predestinasyon kaygısı birleşince dünyevi işte disiplinli olmak ahlaki bir anlam kazandı. Weber’i kendi haftasında ayrıntılı işleyeceğiz."},
+ {tag:"Kapitalizmle kırılma", q:"Erken modern Avrupa’da Yoksul Yasaları’na göre “layık olmayan yoksul” (undeserving poor) kimdi?",
+  o:["Çalışabilecek durumda olduğu halde çalışmayan kişi","Çalışamayacak durumdaki hasta ve yaşlı","Büyük toprak sahibi","Loncaya bağlı zanaatkâr"],a:0,
+  f:"Bu ayrım tembelliğin ahlaki ve hukuki bir suça dönüştürülmesinin kurumsal örneğidir: kırbaç, damgalama ve zorla çalıştırma bu yasaların araçlarıydı."}
+];
+const D = [
+ {mode:"İkili", title:"Aristoteles bugün",
+  quote:"“Ücretli çalışmak bağımlılık yaratır, bağımlılık özgürlüğü zedeler.”",
+  sub:"Bu, Aristoteles’in argümanı. Bugünün çalışma hayatı için buna ne kadar katılıyorsun?",
+  scale:["Hiç katılmıyorum","Tamamen katılıyorum"],k:"stance",
+  ta:"Kendi deneyiminden ya da gözleminden bir örnekle gerekçelendir.",tk:"why",
+  pair:"Yanındakiyle karşılaştırın: örnekleriniz hangi tür işlerden? Aynı puanı verip farklı gerekçe gösterdiniz mi?"},
+ {mode:"Grup (4–5 kişi)", title:"Kırılma nerede?",
+  sub:"Çalışma uzun süre ceza ya da aşağılanma olarak görüldü; sonra bir erdeme dönüştü. Sizce bunda en çok hangisi etkili oldu?",
+  choices:["Din ve ahlak: Kalvinist meslek anlayışı (Weber)","Zamanın satın alınması: fabrika ve saat disiplini (Thompson)","Devlet zoru: Yoksul Yasaları ve tembelliğin suçlaştırılması","Tek başına hiçbiri; hepsi birlikte"],k:"break",
+  ta:"Önce herkes kendi seçimini söylesin. Sonra grup tek bir açıklamada anlaşsın ya da birleştirsin ve sınıfa tek cümleyle sunsun.",tk:"gtxt"},
+ {mode:"Tek başına", title:"Hangi gözlük?",
+  sub:"Bugünkü çalışma deneyimine hangi dönemin bakışı sana en yakın geliyor?",
+  choices:["Hesiodos: çalışma şerefli bir erdem","Aristoteles: ücretli iş bağımlılık","Roma: işin onuru bağımsızlığa bağlı","Orta Çağ: elle çalışan hiyerarşinin altında","İslam: helal kazanç ibadete yakın","Kalvinizm: başarı seçilmişlik işareti"],k:"lens",
+  ta:"Bu gözlükle bir İK uygulamasını (ücret, performans, esneklik) nasıl farklı okurdun? Tek cümle.",tk:"hr"}
+];
+const A = {}; // yanıtlar
+const screens = [{t:"intro"}, ...Q.map((q,i)=>({t:"q",i})), {t:"score"}, ...D.map((d,i)=>({t:"d",i})), {t:"end"}];
+const m = document.getElementById("m"), holes = document.getElementById("holes");
+const back = document.getElementById("back"), next = document.getElementById("next");
+let cur = 0;
+screens.forEach(()=>holes.appendChild(Object.assign(document.createElement("i"),{className:"hole"})));
+
+function h(tag, props, ...kids){
+  const e = Object.assign(document.createElement(tag), props || {});
+  kids.flat().forEach(k => e.append(k));
+  return e;
+}
+function opts(list, onPick, cls){
+  return list.map((t,i) => { const b = h("button",{className:"opt "+(cls||""),type:"button"}, t); b.onclick = () => onPick(i,b); return b; });
+}
+function canNext(){
+  const s = screens[cur];
+  if (s.t === "q") return A["q"+s.i] !== undefined && A["q"+s.i].done;
+  return true;
+}
+function setNext(){
+  next.disabled = cur === screens.length - 1 || !canNext();
+  next.textContent = cur === 0 ? "Başla" : "İleri";
+}
+function head(mode, title){ return [h("div",{className:"mode"},mode), h("h2",{},title)]; }
+
+function renderQ(i){
+  const q = Q[i], st = A["q"+i] = A["q"+i] || {sel:[], done:false};
+  m.append(h("div",{className:"mode"},"Soru "+(i+1)+" / "+Q.length+" · tek başına"), h("div",{className:"tag"},q.tag), h("h2",{},q.q));
+  if (q.multi) m.append(h("p",{className:"mute"},"Birden fazla seçebilirsin."));
+  const box = h("div"), fb = h("div"), btns = [];
+  const correct = new Set([].concat(q.a));
+  function finish(){
+    st.done = true;
+    const right = st.sel.length === correct.size && st.sel.every(x => correct.has(x));
+    st.right = right;
+    btns.forEach((b,j) => { b.disabled = true; b.classList.remove("sel"); if (correct.has(j)) b.classList.add("ok"); else if (st.sel.includes(j)) b.classList.add("no"); });
+    fb.replaceChildren(h("div",{className:"fb"}, h("b",{}, right ? "Doğru." : "Tam değil."), q.f));
+    if (chk) chk.remove();
+    setNext();
+  }
+  let chk = null;
+  opts(q.o, (j,b) => {
+    if (st.done) return;
+    if (q.multi){ st.sel = st.sel.includes(j) ? st.sel.filter(x=>x!==j) : [...st.sel,j]; b.classList.toggle("sel"); if (chk) chk.disabled = !st.sel.length; }
+    else { st.sel = [j]; finish(); }
+  }).forEach(b => { btns.push(b); box.append(b); });
+  m.append(box);
+  if (q.multi){ chk = h("button",{className:"opt",type:"button",disabled:true},"Kontrol et"); chk.style.textAlign="center"; chk.style.fontWeight="700"; chk.onclick = finish; m.append(chk); }
+  m.append(fb);
+  if (st.done){ finish(); }
+}
+function renderScore(){
+  const right = Q.filter((q,i)=>A["q"+i] && A["q"+i].right).length;
+  const miss = [...new Set(Q.filter((q,i)=>!(A["q"+i] && A["q"+i].right)).map(q=>q.tag))];
+  m.append(h("div",{className:"mode"},"Pekiştirme bitti"), h("div",{className:"score"}, right+" / "+Q.length),
+    h("p",{}, miss.length ? "Bu başlıklara derste bir daha göz atmaya değer:" : "Bütün başlıklar yerinde. Şimdi konuşma zamanı."));
+  if (miss.length) m.append(h("ul",{}, miss.map(t => h("li",{},t))));
+  m.append(h("p",{className:"mute"},"Bundan sonrası doğru-yanlış değil, görüş sorusu. Yanıtlar öğrencinin kendisine ve yanındakilere ait."));
+}
+function renderD(i){
+  const d = D[i];
+  m.append(...head(d.mode, d.title));
+  if (d.quote) m.append(h("div",{className:"quote"},d.quote));
+  m.append(h("p",{},d.sub));
+  if (d.scale){
+    const row = h("div",{className:"scale"});
+    [1,2,3,4,5].forEach(n => { const b = h("button",{type:"button"},String(n)); if (A[d.k]===n) b.classList.add("sel");
+      b.onclick = () => { A[d.k] = n; [...row.children].forEach(x=>x.classList.toggle("sel", x===b)); }; row.append(b); });
+    m.append(row, h("div",{className:"ends"}, h("span",{},d.scale[0]), h("span",{},d.scale[1])));
+  }
+  if (d.choices){
+    const bs = opts(d.choices, (j,b) => { A[d.k] = d.choices[j]; bs.forEach(x=>x.classList.toggle("sel", x===b)); });
+    bs.forEach((b,j) => { if (A[d.k]===d.choices[j]) b.classList.add("sel"); });
+    m.append(...bs);
+  }
+  const id = "ta"+i, ta = h("textarea",{id, value:A[d.tk]||""});
+  ta.oninput = () => A[d.tk] = ta.value.trim();
+  m.append(h("label",{htmlFor:id}, d.ta), ta);
+  if (d.pair) m.append(h("div",{className:"fb"}, h("b",{},"Sonra ikiliyle"), d.pair));
+}
+function renderEnd(){
+  m.append(h("div",{className:"mode"},"Etkinlik bitti"), h("h2",{},"Sınıfa dönün."));
+  const rows = [["Aristoteles’e katılma düzeyim (1–5)", A.stance], ["Bence kırılmanın nedeni", A.break], ["En yakın gözlük", A.lens], ["Bir İK uygulamasına bakışım", A.hr]];
+  const dl = h("div",{className:"fb"});
+  rows.forEach(([k,v]) => dl.append(h("div",{className:"tag"},k), h("p",{style:"font-weight:600;overflow-wrap:anywhere"}, v ? String(v) : "—")));
+  m.append(dl, h("p",{className:"mute"},"Bu özet yalnızca bu telefonda. Sayfayı yenilersen silinir."));
+}
+function render(){
+  m.replaceChildren();
+  const s = screens[cur];
+  if (s.t === "intro"){
+    m.append(h("div",{className:"mode"},"Endüstri Sosyolojisi · Çalışmanın tarihi"), h("h1",{},"Çalışmak: ceza mı, erdem mi?"),
+      h("p",{},"Bu etkinlik yaklaşık 30 dakika sürer ve iki parçadan oluşur."),
+      h("div",{className:"fb"}, h("b",{},"1. Pekiştirme (10 soru, tek başına)"), "Etimolojiden kapitalizme, derste gördüklerini hızla yokla. Her yanıttan sonra kısa bir not gelir."),
+      h("div",{className:"fb"}, h("b",{},"2. Düşündürme (3 görev: ikili, grup, tek başına)"), "Doğru cevabı olmayan sorular. Önce yaz, sonra konuş."),
+      h("p",{className:"mute"},"Yanıtların hiçbir yere gönderilmez; yalnızca bu telefonda kalır. Sayfayı yenilersen silinir."));
+  } else if (s.t === "q") renderQ(s.i);
+  else if (s.t === "score") renderScore();
+  else if (s.t === "d") renderD(s.i);
+  else renderEnd();
+  [...holes.children].forEach((e,i)=>{ e.classList.toggle("on", i < cur); e.classList.toggle("cur", i === cur); });
+  back.disabled = cur === 0;
+  setNext();
+  window.scrollTo(0,0);
+}
+next.onclick = () => { cur = Math.min(cur+1, screens.length-1); render(); };
+back.onclick = () => { cur = Math.max(cur-1, 0); render(); };
+render();
+</script>
+</body>
+</html>
