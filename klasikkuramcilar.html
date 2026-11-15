@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hat Sessiz, Ofis Gürültülü · Örnek Olay</title>
+<style>
+:root{
+  --bg:#f7f6f2; --card:#ffffff; --text:#1f2430; --muted:#5d6475; --line:#e2dfd6;
+  --accent:#b4441f; --marx:#c0392b; --durk:#2a7f62; --weber:#2f5da8; --soft:#f1ede4;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14161c; --card:#1d2028; --text:#eceef3; --muted:#a2a8b8; --line:#2e3240;
+    --accent:#ee8a62; --marx:#ef7a6e; --durk:#58c4a0; --weber:#7da7ee; --soft:#252936; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.8rem;line-height:1.2;margin:.2em 0 .1em}
+h2{font-size:1.25rem;margin:2em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+h3{font-size:1.05rem;margin:1.4em 0 .4em}
+p{margin:.6em 0}
+.sub{color:var(--muted);margin:0 0 1em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+.note{font-size:.9rem;color:var(--muted);font-style:italic}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:10px 12px 10px 48px;background:var(--card);
+  border:1px solid var(--line);border-radius:12px;margin:8px 0}
+.steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:26px;height:26px;
+  border-radius:50%;background:var(--accent);color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:.9rem}
+.who{border-left:6px solid var(--line)}
+.who.m{border-left-color:var(--marx)} .who.d{border-left-color:var(--durk)} .who.w{border-left-color:var(--weber)}
+.who b.m{color:var(--marx)} .who b.d{color:var(--durk)} .who b.w{color:var(--weber)}
+.terms{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.terms span{background:var(--soft);border-radius:6px;padding:2px 8px;font-size:.85rem}
+ul{padding-left:1.2em;margin:.5em 0}
+li{margin:.25em 0}
+blockquote{margin:.8em 0;padding:8px 14px;background:var(--soft);border-left:4px solid var(--accent);border-radius:0 8px 8px 0}
+blockquote b{display:block;font-size:.85rem;color:var(--muted);margin-bottom:2px}
+.olay{border-top:5px solid var(--accent)}
+.olay h3{margin-top:0}
+.olay .no{font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--accent);text-transform:uppercase}
+details{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+textarea{width:100%;min-height:96px;margin-top:8px;padding:10px;border:1px solid var(--line);
+  border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:16px;resize:vertical}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button{font:inherit;font-size:.95rem;padding:9px 16px;border-radius:10px;border:1px solid var(--accent);
+  background:var(--accent);color:#fff;cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+.task-tag{display:inline-block;font-size:.75rem;font-weight:700;background:var(--accent);color:#fff;
+  border-radius:6px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+footer{margin-top:40px;color:var(--muted);font-size:.85rem;text-align:center}
+.stat{font-weight:700}
+</style>
+</head>
+<body>
+<main>
+
+<h1>🏭 Hat Sessiz, Ofis Gürültülü</h1>
+<p class="sub">Örnek Olay · Endüstri Sosyolojisi · 6. Hafta (Klasik Kuramcılar)</p>
+
+<div class="chips">
+  <span class="chip">⏱️ ≈ 35 dakika</span>
+  <span class="chip">👤 Bireysel</span>
+  <span class="chip">👥 3-4 kişilik grup</span>
+</div>
+<p class="note">Şirket ve kişiler tamamen kurgusaldır.</p>
+
+<h2>⏲️ Nasıl ilerleyeceğiz?</h2>
+<ol class="steps">
+  <li><b>Oku (5 dk):</b> Şirketi ve 5 olayı oku.</li>
+  <li><b>Bireysel çalış (10 dk):</b> Görev 1 ve 2’yi tek başına yap. Grupla çalışıyorsan da önce herkes kendi cevabını yazsın.</li>
+  <li><b>Tartış (15 dk):</b> Görev 3’ü grupla yap. Bireysel çalışıyorsan kendine “karşı görüş” yaz.</li>
+  <li><b>Kapanış (5 dk):</b> Görev 4 ve sınıf tartışması.</li>
+</ol>
+<p class="note">Doğru-yanlış cevap aranmıyor. <b>Gerekçen</b> önemli.</p>
+
+<h2>🧭 Cep Kartı: Üç Soru, Üç Kuramcı</h2>
+<div class="card who m"><b class="m">Marx sorar</b>
+  <p>Kim kazanıyor, kim kaybediyor? İşi kim tasarlıyor, kim uyguluyor? Kim kimi denetliyor?</p></div>
+<div class="card who d"><b class="d">Durkheim sorar</b>
+  <p>Parçalar birbirine nasıl bağlı? Değişim hızlı mı, kurallar yetişiyor mu? Fırsatlar adil mi?</p></div>
+<div class="card who w"><b class="w">Weber sorar</b>
+  <p>Hangi kurallar işliyor? İtaat neye dayanıyor? Kapıyı kim kapatıyor?</p></div>
+<div class="terms">
+  <span>yabancılaşma</span><span>tasarım-uygulama ayrımı</span><span>anomik iş bölümü</span>
+  <span>zoraki iş bölümü</span><span>organik dayanışma</span><span>rasyonel-yasal otorite</span>
+  <span>demir kafes</span><span>mesleki kapanma</span>
+</div>
+
+<h2>🏢 Şirket: Anadolu Hassas Parça A.Ş.</h2>
+<div class="card">
+<ul>
+  <li>Manisa’da otomotiv yan sanayi üreticisi</li>
+  <li><b>450 çalışan:</b> 320 kişi üretimde, 130 kişi ofiste</li>
+  <li>1994’te Mehmet Aydoğan kurdu. Şimdi <b>Genel Müdür</b> oğlu <b>Alper Aydoğan</b></li>
+  <li>İki yıl önce bir elektrikli araç müşterisi geldi, <b>üretim hacmi 3 kat</b> arttı</li>
+  <li>Yönetimin yeni programı: <b>“Dönüşüm 2027”</b></li>
+</ul>
+</div>
+
+<h3>👥 Kişiler</h3>
+<div class="card">
+<ul>
+  <li><b>Kemal Usta</b> (49): CNC hattında 18 yıldır çalışıyor</li>
+  <li><b>Hakan</b> (29): Bakım teknisyeni, 7 yıldır şirkette, ön lisans mezunu</li>
+  <li><b>Burcu</b> (31): Üretim planlama uzmanı</li>
+  <li><b>Ercan</b> (34): Satış ve müşteri ilişkileri</li>
+  <li><b>Selin</b> (27): İK uzmanı, 2 yıldır şirkette</li>
+  <li><b>Alper Bey</b>: Genel Müdür</li>
+</ul>
+</div>
+
+<h2>📂 Olaylar</h2>
+
+<div class="card olay">
+  <div class="no">Olay 1</div>
+  <h3>“Ekran Beni Tanımıyor”</h3>
+  <p>Üretim hatlarına <b>“Akıllı Üretim”</b> ekranları kuruldu. Her operatörün parça başına süresi saniyeyle ölçülüyor. Sonuçlar panoda <b>yeşil, sarı ya da kırmızı</b> görünüyor. Prim artık bu puana bağlı.</p>
+  <p>Eskiden bir makine sorun çıkarınca Kemal Usta sesinden anlar, hattın sırasını kendisi değiştirirdi. Şimdi sırayı yazılım belirliyor. Sıradan sapan operatöre uyarı geliyor.</p>
+  <blockquote><b>Kemal Usta</b>“Bu makineyi 18 yıldır tanırım. Ekran beni tanımıyor.”</blockquote>
+  <p>Yönetim sonuçtan memnun: <span class="stat">verim %6 arttı.</span> Aynı dönemde hat çalışanlarının işten ayrılması <span class="stat">iki katına çıktı.</span></p>
+</div>
+
+<div class="card olay">
+  <div class="no">Olay 2</div>
+  <h3>“Bu Benim Kalemim Değildi”</h3>
+  <p>Müşteri bir parça çizimini revize etti. Ercan değişikliği satış sistemine girdi ama planlamaya haber vermedi.</p>
+  <blockquote><b>Ercan</b>“Planlama sistemden görür sanıyordum.”</blockquote>
+  <p>Burcu eski revizyonla iş emri açtı. Hat <span class="stat">3 gün boyunca</span> yanlış parça üretti.</p>
+  <p>Toplantıda herkes aynı cümleyi söyledi: <i>“Bu benim kalemim değil.”</i></p>
+  <p>Şirket iki yılda 3 kat büyüdü. Organizasyon şeması <b>4 kez değişti.</b> Kimin kime rapor verdiği hâlâ net değil. Planlama Excel kullanıyor, satış ayrı bir yazılım, kalite kendi formlarını.</p>
+</div>
+
+<div class="card olay">
+  <div class="no">Olay 3</div>
+  <h3>“Yedi İmza”</h3>
+  <p>Bir kalıp ayarını değiştirmek için formda <b>7 imza</b> gerekiyor: usta, vardiya amiri, kalite, bakım, planlama, iş güvenliği ve genel müdür yardımcısı. Süreç ortalama <span class="stat">9 gün</span> sürüyor.</p>
+  <p>Her imzanın ardında geçmişte yaşanmış gerçek bir hata var. Süreç kalite denetiminden de geçti.</p>
+  <blockquote><b>Hakan</b>“Ayarı 20 dakikada yapıyorum, 9 gün imza bekliyorum.”</blockquote>
+  <blockquote><b>Burcu</b>“Kural koymasak yine kaos olur.”</blockquote>
+</div>
+
+<div class="card olay">
+  <div class="no">Olay 4</div>
+  <h3>“İlan”</h3>
+  <p>Şirket <b>Üretim Planlama Uzmanı</b> arıyor. İlandaki şartlar:</p>
+  <ul>
+    <li>Belirli üniversitelerin Endüstri Mühendisliği mezunu olmak</li>
+    <li>Belirli bir sertifikaya sahip olmak</li>
+  </ul>
+  <p>Hakan 7 yıldır hattın planlama sorunlarını sahada çözüyor. Ama ön lisans mezunu olduğu için <b>başvuramıyor.</b></p>
+  <p>Aynı dönemde Alper Bey’in bir akrabası, ilan şartlarını karşılayan biri olarak, bölüme <b>müdür yardımcısı</b> atandı. Selin ilan şartlarını İK’nın değil, yönetimin belirlediğini söylüyor.</p>
+</div>
+
+<div class="card olay">
+  <div class="no">Olay 5</div>
+  <h3>“Biz Bir Aileyiz”</h3>
+  <p>Fabrika girişinde büyük bir poster var: <b>“Biz bir aileyiz.”</b></p>
+  <ul>
+    <li>Vardiya değişiklikleri gece 23.00’te WhatsApp grubundan duyuruluyor</li>
+    <li>Hafta sonu mesaisi “gönüllü”, ama liste panoda <b>herkesin görebileceği</b> şekilde asılı</li>
+    <li>Burcu tatildeyken bile e-postaları yanıtlıyor: <i>“Cevap vermezsem iyi bir çalışan olmam.”</i></li>
+    <li>Ercan ofiste şöyle diyor: <i>“Artık sözleşmemde yazandan fazlasını yapmıyorum.”</i></li>
+  </ul>
+  <p>Son bir yılda ofiste işten ayrılma oranı <span class="stat">%14’ten %22’ye</span> çıktı.</p>
+</div>
+
+<h2>✍️ Görevler</h2>
+<p class="note">Cevaplarını aşağıdaki kutulara yazabilirsin. Tarayıcın bu cihazda taslağı otomatik saklar (sayfayı kapatsan da kalır). Hocana teslim etmek için en alttaki “Cevaplarımı kopyala” düğmesini kullan.</p>
+
+<div class="card">
+  <h3 style="margin-top:0">Görev 1: Mercek Seç <span class="task-tag">bireysel · ~5 dk</span></h3>
+  <p>Her olay için <b>en çok işe yarayan kuramcıyı</b> seç ve <b>1-2 cümleyle</b> gerekçe yaz. Bir olayda birden fazla kuramcı da seçebilirsin.</p>
+  <blockquote><b>Örnek biçim</b>Olay X → Marx. Çünkü … (hangi kavram, olayda hangi ayrıntı)</blockquote>
+  <textarea id="g1" data-label="Görev 1: Mercek Seç" placeholder="Olay 1 → …&#10;Olay 2 → …&#10;Olay 3 → …&#10;Olay 4 → …&#10;Olay 5 → …"></textarea>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Görev 2: Üç Gözlük <span class="task-tag">bireysel · ~5 dk</span></h3>
+  <p><b>Bir olay seç</b> (Olay 2 ve 3 özellikle iyi çalışır). Aynı olayı üç kuramcının gözünden oku:</p>
+  <ul>
+    <li><b style="color:var(--marx)">Marx</b> bu olaya ne der? Sorun ne, çözüm ne olurdu?</li>
+    <li><b style="color:var(--durk)">Durkheim</b> bu olaya ne der? Sorun ne, çözüm ne olurdu?</li>
+    <li><b style="color:var(--weber)">Weber</b> bu olaya ne der? Sorun ne, çözüm ne olurdu?</li>
+  </ul>
+  <p>Her biri için <b>bir cümle</b> yeterli.</p>
+  <details><summary>💡 Takıldın mı? İpucu</summary>
+    <p>Önce olaydaki <b>somut bir ayrıntıyı</b> seç (bir rakam, bir cümle, bir uygulama). Sonra “bu hangi kavrama benziyor?” diye sor.</p>
+    <p>Dikkat: Bir olay birden fazla kavrama benzeyebilir. Bu normal. Önemli olan neden o kavramı seçtiğini söyleyebilmen.</p>
+  </details>
+  <textarea id="g2" data-label="Görev 2: Üç Gözlük" placeholder="Seçtiğim olay: …&#10;Marx: …&#10;Durkheim: …&#10;Weber: …"></textarea>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Görev 3: Selin’in Önerisi <span class="task-tag">grup · ~15 dk</span></h3>
+  <p>Selin, Alper Bey’e <b>5 dakikalık bir sunum</b> yapacak. Grup olarak (ya da tek başına) Selin’in yerine geçin:</p>
+  <ol>
+    <li>İşten ayrılmaların <b>ana nedeni</b> sizce ne? Tek bir neden seçin ve gerekçelendirin.</li>
+    <li>Yönetime <b>iki somut öneri</b> sunun.</li>
+    <li>Önerilerinizin <b>bedeli</b> ne? Kim neyi kaybeder ya da neden vazgeçer?</li>
+    <li>Alper Bey “verim arttı, neden değişelim?” derse ne cevap verirsiniz?</li>
+  </ol>
+  <p><i>Bireysel çalışanlar:</i> Önerinize karşı çıkacak <b>bir yönetici gibi</b> düşünüp itirazı da yazın.</p>
+  <details><summary>💡 Takıldın mı? İpucu</summary>
+    <p>Üç kuramcının önerileri birbiriyle çelişebilir. Örneğin biri <b>daha fazla kural</b>, diğeri <b>daha az denetim</b> isteyebilir. Bu çelişkiyi saklamayın, <b>görünür kılın</b> ve hangisini neden seçtiğinizi söyleyin.</p>
+  </details>
+  <textarea id="g3" data-label="Görev 3: Selin’in Önerisi" style="min-height:160px" placeholder="1) Ana neden: …&#10;2) Önerilerim: …&#10;3) Bedeli: …&#10;4) Alper Bey’e cevabım: …"></textarea>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Görev 4: Tek Cümle <span class="task-tag">herkes · ~2 dk</span></h3>
+  <p>Bu şirketin sorununu <b>tek cümleyle</b> özetle. Bu cümlede hangi kuramcının kavramı geçiyor?</p>
+  <textarea id="g4" data-label="Görev 4: Tek Cümle" style="min-height:72px" placeholder="Bu şirketin sorunu …"></textarea>
+</div>
+
+<div class="actions">
+  <button id="copy">📋 Cevaplarımı kopyala</button>
+  <button id="clear" class="ghost">🗑️ Temizle</button>
+</div>
+<p id="msg" class="note" role="status"></p>
+
+<h2>🗣️ Sınıfta Konuşalım</h2>
+<ul>
+  <li>Aynı olayı farklı kuramcılarla okuyunca <b>ne değişti?</b></li>
+  <li>Olay 1’de verim arttı ama işten ayrılma iki katına çıktı. <b>Başarı mı, başarısızlık mı?</b> Kim açısından?</li>
+  <li>Hangi olay sizin tanıdığınız bir iş yerini en çok andırdı?</li>
+</ul>
+
+<footer>Bu materyal, Endüstri Sosyolojisi 6. hafta ders notları temel alınarak hazırlanmıştır.</footer>
+</main>
+
+<script>
+(function(){
+  var KEY = "ensos-hafta6-";
+  var boxes = document.querySelectorAll("textarea");
+  var msg = document.getElementById("msg");
+  function say(t){ msg.textContent = t; }
+  boxes.forEach(function(b){
+    try { var v = localStorage.getItem(KEY + b.id); if (v) b.value = v; } catch(e){}
+    b.addEventListener("input", function(){
+      try { localStorage.setItem(KEY + b.id, b.value); } catch(e){}
+    });
+  });
+  document.getElementById("copy").addEventListener("click", function(){
+    var out = "Hat Sessiz, Ofis Gürültülü · Cevaplarım\n\n";
+    boxes.forEach(function(b){ out += "## " + b.dataset.label + "\n" + (b.value || "(boş)") + "\n\n"; });
+    function fallback(){
+      var t = document.createElement("textarea");
+      t.value = out; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); say("Cevapların kopyalandı."); }
+      catch(e){ say("Kopyalanamadı. Metni elle seçip kopyala."); }
+      document.body.removeChild(t);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(out).then(function(){ say("Cevapların kopyalandı."); }, fallback);
+    } else { fallback(); }
+  });
+  document.getElementById("clear").addEventListener("click", function(){
+    if (!confirm("Tüm cevaplar silinsin mi?")) return;
+    boxes.forEach(function(b){
+      b.value = "";
+      try { localStorage.removeItem(KEY + b.id); } catch(e){}
+    });
+    say("Cevaplar temizlendi.");
+  });
+})();
+</script>
+</body>
+</html>
