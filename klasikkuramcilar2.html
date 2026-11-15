@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endüstri Sosyolojisi - 6. Hafta Vaka Analizi: EgeModa</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --marx-color: #dc2626;
+            --marx-bg: #fef2f2;
+            --durkheim-color: #0284c7;
+            --durkheim-bg: #f0f9ff;
+            --weber-color: #059669;
+            --weber-bg: #ecfdf5;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding-bottom: 48px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 24px 20px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        header h1 {
+            font-size: 1.45rem;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mode-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 14px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        .mode-box ul {
+            margin-left: 18px;
+            margin-top: 6px;
+        }
+
+        .mode-box li {
+            margin-bottom: 6px;
+        }
+
+        .case-item {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .case-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .theorist-section {
+            border-left: 4px solid #ccc;
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
+
+        .theorist-section.marx { border-color: var(--marx-color); }
+        .theorist-section.durkheim { border-color: var(--durkheim-color); }
+        .theorist-section.weber { border-color: var(--weber-color); }
+
+        .theorist-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .marx .theorist-title { color: var(--marx-color); }
+        .durkheim .theorist-title { color: var(--durkheim-color); }
+        .weber .theorist-title { color: var(--weber-color); }
+
+        .question-list {
+            margin-left: 18px;
+            margin-bottom: 10px;
+        }
+
+        .question-list li {
+            margin-bottom: 8px;
+        }
+
+        textarea.note-input {
+            width: 100%;
+            min-height: 75px;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            resize: vertical;
+            margin-top: 6px;
+            background-color: #ffffff;
+        }
+
+        textarea.note-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        details {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        summary {
+            padding: 13px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-size: 0.95rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
+            font-size: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.marx summary { background: var(--marx-bg); color: var(--marx-color); }
+        details.durkheim summary { background: var(--durkheim-bg); color: var(--durkheim-color); }
+        details.weber summary { background: var(--weber-bg); color: var(--weber-color); }
+
+        .details-content {
+            padding: 14px 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.93rem;
+        }
+
+        .details-content ul {
+            margin-left: 18px;
+        }
+
+        .details-content li {
+            margin-bottom: 8px;
+        }
+
+        .prescription-box {
+            background: #fefce8;
+            border: 1px solid #fde047;
+            border-radius: var(--radius);
+            padding: 18px;
+        }
+
+        .prescription-box h2 {
+            color: #854d0e;
+        }
+
+        .btn-clear {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-clear:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge-row">
+            <span class="badge">Endüstri Sosyolojisi</span>
+            <span class="badge">6. Hafta: Klasik Kuramcılar</span>
+            <span class="badge">⏱ 25–30 Dk</span>
+        </div>
+        <h1>📱 Ders Sonu Uygulaması: "EgeModa"da Neler Oluyor?</h1>
+        <p>Karl Marx • Émile Durkheim • Max Weber</p>
+    </header>
+
+    <section class="card">
+        <h2>🎯 Uygulama Yönergesi</h2>
+        <p>Derste ele aldığımız üç kurucu düşünürün kavramlarını, günümüz özel sektöründeki gerçekçi bir İnsan Kaynakları (İK) krizi üzerinden test ediyoruz.</p>
+        <div class="mode-box">
+            <strong>Nasıl Çalışabilirsiniz?</strong>
+            <ul>
+                <li><strong>Bireysel Çalışma:</strong> Olayı okuyun, aşağıdaki not alanlarına her kuramcı için kısa tespitlerinizi yazın ve açılır-kapanır kavram kartlarından yanıtlarınızı kontrol edin.</li>
+                <li><strong>Grup Çalışması (3–4 Kişi):</strong> Aranızda <em>Marx, Durkheim ve Weber</em> rollerini paylaşın. Herkes olayı kendi kuramcısının kavramlarıyla savunsun; son 5 dakikada İK ekibi olarak ortak bir çözüm üretin.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>📖 Örnek Olay: EgeModa Tekstil ve Mağazacılık A.Ş.</h2>
+        <p><strong>EgeModa</strong>, hem kendi fabrikalarında üretim yapan hem de Türkiye genelinde 45 mağazası bulunan köklü bir hazır giyim şirketidir. Şirket son iki yılda hızlı bir büyüme ve dijitalleşme sürecine girmiştir. Yönetim, her fırsatta <em>"Biz büyük bir aileyiz, kapımız herkese açık"</em> mesajı vermektedir.</p>
+        <p>Ancak son dönemde hem üretim bandında hem de mağazalarda işten ayrılmalar (turnover) artmış, çalışan memnuniyeti düşmüştür. İK departmanının masasında şu <strong>dört temel sorun</strong> durmaktadır:</p>
+
+        <div class="case-item">
+            <span class="case-title">1. Üretim Bandı ve Mağaza Kasaları ("Saniyelerin Denetimi")</span>
+            <p>Fabrikadaki dikim bandında çalışan işçilerin önündeki ekranlarda, her bir parçayı kaç saniyede dikmeleri gerektiği anlık olarak sayılmaktadır. Benzer şekilde mağaza kasiyerlerinin de her müşteriyi ortalama kaç saniyede kasadan geçirdiği ve kaç ek ürün önerdiği POS cihazları üzerinden takip edilmektedir. Çalışanlar hangi yöntemle çalışacaklarına veya ne zaman kısa bir nefes alacaklarına kendileri karar veremez; tüm akış merkezdeki sistem tarafından belirlenir. İşçiler gün sonunda <em>"Ne ürettiğimizi bile görmüyoruz, sadece ekrandaki sayılarla yarışıyoruz"</em> demektedir.</p>
+        </div>
+
+        <div class="case-item">
+            <span class="case-title">2. Merkez Ofis ve Mağazalar Arası Kopukluk ("Kim, Ne Yapıyor?")</span>
+            <p>Şirket hızla yeni mağazalar açarken merkez ofis birimleri (Tasarım, Üretim Planlama, Pazarlama ve Mağaza Operasyonları) arasında ciddi bir kopukluk oluşmuştur. Pazarlama ekibi mağazalara indirim kampanyası duyurusu yaparken üretim ve depo ekiplerinin bundan son anda haberi olmaktadır. Mağaza müdürleri merkezden gelen çelişkili talimatlar yüzünden kime rapor vereceğini şaşırmış durumdadır; herkes <em>"Bu benim işim değil"</em> diyerek sorumluluktan kaçmaktadır.</p>
+        </div>
+
+        <div class="case-item">
+            <span class="case-title">3. Yönetici Terfi Kriterleri ("Görünmez Duvar")</span>
+            <p>İK departmanı, mağaza bölge müdürlüğü ve fabrika şefliği gibi üst pozisyonlara alımlarda yeni bir kural getirmiştir: Bu pozisyonlara başvurmak için <strong>belirli seçkin üniversitelerden mezun olmak</strong> ve maliyeti yüksek uluslararası bir yönetim sertifikasına sahip olmak zorunludur. Şirkette 10 yıldır çalışan, üretimi ve müşteriyi çok iyi tanıyan lise veya meslek yüksekokulu mezunu deneyimli çalışanlar, performansları ne kadar yüksek olursa olsun terfi listesine girememektedir.</p>
+        </div>
+
+        <div class="case-item">
+            <span class="case-title">4. Onay Labirenti ve "Her An Ulaşılabilir Olma" Kültürü</span>
+            <p>Mağazalarda bir müşterinin basit bir iade talebini onaylamak veya fabrikada küçük bir makine arızası için parça talep etmek bile 4 farklı birimin dijital onayından geçmektedir. Kurallar o kadar katılaşmıştır ki çalışanlar inisiyatif alamaz hale gelmiştir. Öte yandan beyaz yakalı ofis çalışanları arasında akşam saatlerinde ve hafta sonları WhatsApp/e-posta gruplarına anında cevap vermek "bağlılık göstergesi" sayılmakta; mesai dışında mesaj yazmayanlar "işine yeterince adanmamış" görülmektedir.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🔍 Analiz Soruları (20 Dakika)</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">Notlarınız tarayıcınızda otomatik olarak saklanır; sayfayı yenileseniz bile silinmez.</p>
+
+        <div class="theorist-section marx">
+            <div class="theorist-title">1️⃣ Karl Marx'ın Gözlüğüyle</div>
+            <ul class="question-list">
+                <li><strong>Soru 1:</strong> Üretim bandı ve kasalardaki saniye bazlı dijital takibi Marx'ın <em>emek süreci</em> ve <em>algoritmik yönetim</em> kavramlarıyla nasıl açıklarsınız? Çalışanlar burada hangi <em>yabancılaşma</em> türlerini yaşıyor?</li>
+                <li><strong>Soru 2:</strong> Yönetimin <em>"Biz büyük bir aileyiz"</em> söylemi, Marx'ın <em>alt yapı – üst yapı</em> ilişkisine göre ne işe yaramaktadır?</li>
+            </ul>
+            <textarea id="note-marx" class="note-input" placeholder="Marx analizi için kısa notlarınızı buraya yazabilirsiniz..."></textarea>
+        </div>
+
+        <div class="theorist-section durkheim">
+            <div class="theorist-title">2️⃣ Émile Durkheim'ın Gözlüğüyle</div>
+            <ul class="question-list">
+                <li><strong>Soru 3:</strong> Merkez birimleri ile mağazalar arasındaki iletişimsizliği ("silo etkisi") ve belirsizliği Durkheim'ın hangi kavramlarıyla (<em>anomik iş bölümü / anomi</em>) açıklarsınız?</li>
+                <li><strong>Soru 4:</strong> Deneyimli çalışanların sadece okul ve sertifika engeli yüzünden terfi edememesi, Durkheim'a göre nasıl bir iş bölümüdür? Bu durum şirket içindeki <em>organik dayanışmayı</em> nasıl etkiler?</li>
+            </ul>
+            <textarea id="note-durkheim" class="note-input" placeholder="Durkheim analizi için kısa notlarınızı buraya yazabilirsiniz..."></textarea>
+        </div>
+
+        <div class="theorist-section weber">
+            <div class="theorist-title">3️⃣ Max Weber'in Gözlüğüyle</div>
+            <ul class="question-list">
+                <li><strong>Soru 5:</strong> Terfilerdeki üniversite ve sertifika şartını Weber'in <em>mesleki kapanma (dışlama)</em> kavramıyla yorumlayın. İK burada nasıl bir gerilim yaratmıştır?</li>
+                <li><strong>Soru 6:</strong> Basit bir işlem için 4 farklı onay gerektiren sistemi Weber'in <em>rasyonelleşme</em> ve <em>demir kafes</em> kavramlarıyla nasıl açıklarsınız?</li>
+                <li><strong>Soru 7:</strong> Mesai dışı mesajlaşmanın "adanmışlık" sayılmasını Weber'in <em>Protestan ahlakı</em> ve günümüzdeki seküler işkoliklik kültürüyle ilişkilendirin.</li>
+            </ul>
+            <textarea id="note-weber" class="note-input" placeholder="Weber analizi için kısa notlarınızı buraya yazabilirsiniz..."></textarea>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>💡 Kavram Hatırlatıcıları & İpuçları</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">Takıldığınız noktada ilgili kuramcının kartına dokunarak ipuçlarını açabilirsiniz.</p>
+
+        <details class="marx">
+            <summary>🔴 Karl Marx Kavram Kartı (Görmek için dokun)</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>Emek Süreci & Tasarım-Uygulama Ayrımı:</strong> İşin nasıl yapılacağına (tasarım) sistem/yönetici karar verir, çalışana sadece söyleneni yapmak (uygulama) kalır.</li>
+                    <li><strong>Yabancılaşma Türleri:</strong> <em>Ürüne</em> (ürettiği kıyafete/değere uzaklık), <em>üretim sürecine</em> (hız ve yöntem kontrolünü kaybetme), <em>kendine</em> (işin sadece katlanılan bir zorunluluğa dönüşmesi).</li>
+                    <li><strong>Alt Yapı – Üst Yapı:</strong> "Biz aileyiz" gibi kültürel söylemler (üst yapı), ekonomik çıkarları ve denetimi (alt yapı) yumuşatıp meşrulaştırır.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="durkheim">
+            <summary>🔵 Émile Durkheim Kavram Kartı (Görmek için dokun)</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>Organik Dayanışma:</strong> Farklı uzmanlıkların (tasarım, üretim, satış) birbirini tamamlayarak bir arada durmasıdır.</li>
+                    <li><strong>Anomik İş Bölümü & Anomi:</strong> Hızlı büyüme nedeniyle ortak kuralların ve iletişimin yetmemesi, kimin ne yapacağının belirsizleşmesi (silo etkisi).</li>
+                    <li><strong>Zoraki (Dayatılmış) İş Bölümü:</strong> Terfilerin yetenek ve emeğe göre değil, doğuştan gelen veya sonradan erişimi eşitsiz olan avantajlara (belli okullar, pahalı sertifikalar) göre dağıtılması.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="weber">
+            <summary>🟢 Max Weber Kavram Kartı (Görmek için dokun)</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>Rasyonelleşme & Demir Kafes:</strong> Verimlilik ve güvenlik için konulan kuralların üst üste binerek çalışanı kilitleyen, anlamını yitirmiş bir bürokratik labirente dönüşmesi.</li>
+                    <li><strong>Mesleki Kapanma (Dışlama):</strong> Diploma ve sertifika gibi bariyerlerle yönetici pozisyonlarının belirli bir zümreye kapatılması.</li>
+                    <li><strong>Protestan Ahlakı (Seküler Hali):</strong> Dini kökeninden kopmuş olsa da çok çalışmayı ve "her an ulaşılabilir olmayı" kişisel değer ve ahlaki üstünlük ölçütü haline getiren işkoliklik kültürü.</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <section class="prescription-box">
+        <h2>🛠️ Son 5 Dakika: İK'nın Çözüm Reçetesi</h2>
+        <p>Kendinizi <strong>EgeModa'nın İK ekibi</strong> yerine koyun. Yukarıdaki analizlerden yola çıkarak, şirketteki bu tıkanıklığı aşmak için <strong>3 somut İK adımı</strong> (1 Marx'ın, 1 Durkheim'ın, 1 Weber'in işaret ettiği soruna yönelik) belirleyin ve sınıfla paylaşın.</p>
+        <textarea id="note-solution" class="note-input" placeholder="1. Marx'a yönelik çözüm...&#10;2. Durkheim'a yönelik çözüm...&#10;3. Weber'e yönelik çözüm..."></textarea>
+        <button type="button" class="btn-clear" onclick="clearNotes()">Notlarımı Temizle</button>
+    </section>
+
+    <footer>
+        Endüstri Sosyolojisi Dersi • İKY Bölümü • Sınıf İçi Vaka Materyali
+    </footer>
+</div>
+
+<script>
+    const fields = ['note-marx', 'note-durkheim', 'note-weber', 'note-solution'];
+
+    window.addEventListener('DOMContentLoaded', () => {
+        fields.forEach(id => {
+            const el = document.getElementById(id);
+            const saved = localStorage.getItem('egemoda_' + id);
+            if (saved) el.value = saved;
+
+            el.addEventListener('input', () => {
+                localStorage.setItem('egemoda_' + id, el.value);
+            });
+        });
+    });
+
+    function clearNotes() {
+        if (confirm('Yazdığınız tüm notlar silinecek. Emin misiniz?')) {
+            fields.forEach(id => {
+                localStorage.removeItem('egemoda_' + id);
+                document.getElementById(id).value = '';
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
